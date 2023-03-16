@@ -11,7 +11,7 @@ import java.net.URL;
 import static com.example.demo.login.aoth;
 
 public class OldConnection {
-    static String[] result = aoth();
+static String[] result = aoth();
     private static final String API_URL = result[0];
     private static final String API_KEY = result[1];
 

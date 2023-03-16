@@ -7,6 +7,8 @@ import lombok.Setter;
 @Data
 public class ConnectionParam {
 
+
+
     private  @Getter @Setter String Email;//"darshan.yadav@credextechnology.com";
     private  @Getter@Setter String Password;//"Credex@2023hEJBJK5bVVEeZciIVO9Hs2YsS";
     private  @Getter  String LOGINURL="https://credextechnology7-dev-ed.develop.my.salesforce.com";

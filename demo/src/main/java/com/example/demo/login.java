@@ -17,26 +17,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 public class  login {
+    public static HttpResponse response = null;
+    public static int statusCode;
 
-        @Autowired
-        public static ConnectionParam con = new ConnectionParam();
+    @Autowired
+        public static ConnectionParam conn = new ConnectionParam();
         static String loginAccessToken =null;
         static  String loginInstanceUrl= null;
 
         public static String[] aoth() {
             HttpClient httpclient = HttpClientBuilder.create().build();
-            String loginurl = con.getLOGINURL() + con.getGrantService() + "&client_id=" + con.getClientId() + "&client_secret=" +con.getClientSecret() + "&username=" +
-                    con.getEmail() + "&password=" + con.getPassword();
+            String loginurl = conn.getLOGINURL() + conn.getGrantService() + "&client_id=" + conn.getClientId() + "&client_secret=" +conn.getClientSecret() + "&username=" +
+                    conn.getEmail() + "&password=" + conn.getPassword();
             System.out.println(loginurl);
             HttpPost httpPost = new HttpPost(loginurl);
-            HttpResponse response = null;
+            ;
             try {
                 response = httpclient.execute(httpPost);
             } catch (IOException cpException) {
                 cpException.printStackTrace();
             }
             assert response != null;
-            final int statusCode = response.getStatusLine().getStatusCode();
+            statusCode = response.getStatusLine().getStatusCode();
             if (statusCode != HttpStatus.SC_OK) {
                 System.out.println("Error authenticating to force.com:" + statusCode);
 
@@ -57,6 +59,7 @@ public class  login {
             } catch (JSONException jsonException) {
                 jsonException.printStackTrace();
             }
+
             System.out.println(response.getStatusLine());
             System.out.println("Successful login");
             JSONObject root = new JSONObject();

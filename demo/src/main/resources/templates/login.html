@@ -1,4 +1,4 @@
-<html lang="en" >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animated Login Form</title>
     <link rel="stylesheet" href=".\static\css\login.css">
+
+
 </head>
 
 <body>
+<div id="bg"></div>
 <form action="login" method="post" autocomplete="off">
     <h1 class="a11y-hidden">Login Form</h1>
     <div>
-        <label class="email">
-            <input type="email" class="text" name="email" placeholder="Email" tabindex="1" required />
+        <label class="Email">
+            <input type="text" class="text" name="email" placeholder="Email" required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" />
             <span class="required">Email</span>
         </label>
     </div>
+
     <input type="checkbox" name="show-password" class="show-password a11y-hidden" id="show-password" tabindex="3" />
     <label class="label-show-password" for="show-password">
         <span>Show Password</span>
@@ -29,19 +33,20 @@
     </div>
     <div>
         <label for="clientid">
-        <input type="text" placeholder="ClientId" id="clientid" name="clientid">
+        <input type="text" placeholder="ClientId" id="clientid" name="clientid" required>
         <span class="required">ClientId</span>
     </label>
     </div>
 
     <div>
             <label for="clientsecret">
-            <input type="text" placeholder="ClientSecret" id="clientsecret" name="clientsecret">
+            <input type="text" placeholder="ClientSecret" id="clientsecret" name="clientsecret" required >
             <span class="required">ClientSecret</span>
         </label>
 
     </div>
-    <input type="submit" value="Log In" />
+    <input type="submit" onclick="myFunction()" value="Log In" />
+
 
     <figure aria-hidden="true">
         <div class="person-body"></div>
@@ -56,6 +61,9 @@
         <div class="shirt-2"></div>
     </figure>
 </form>
+</div>
+<script  src="./static/js/alert.js"></script>
 </body>
+
 
 </html>
