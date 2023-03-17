@@ -3,11 +3,9 @@ package com.example.demo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.thymeleaf.spring6.SpringTemplateEngine;
-import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
-import org.thymeleaf.templateresolver.ITemplateResolver;
+
 
 
 
@@ -17,7 +15,7 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
         @Bean
         public ClassLoaderTemplateResolver yourTemplateResolver() {
             ClassLoaderTemplateResolver configurer = new ClassLoaderTemplateResolver();
-            configurer.setPrefix("/templates/");
+            configurer.setPrefix("/static/");
             configurer.setSuffix(".html");
             configurer.setTemplateMode(TemplateMode.HTML);
             configurer.setCharacterEncoding("UTF-8");

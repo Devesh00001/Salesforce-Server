@@ -7,6 +7,7 @@ import com.example.demo.model.ConnectionParam;
 import com.github.tsohr.JSONException;
 import com.github.tsohr.JSONObject;
 import com.github.tsohr.JSONTokener;
+import jakarta.servlet.http.HttpSession;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -19,7 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class  login {
     public static HttpResponse response = null;
     public static int statusCode;
-
+    public static String Code;
     @Autowired
         public static ConnectionParam conn = new ConnectionParam();
         static String loginAccessToken =null;
@@ -68,7 +69,7 @@ public class  login {
             System.out.println("instance url" + loginInstanceUrl);
             System.out.println("access token/session ID:" + loginAccessToken);
             httpPost.releaseConnection();
-
+            Code = response.getStatusLine().toString();
 
 
             return new String[]{loginInstanceUrl, loginAccessToken};

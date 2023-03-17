@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import org.jetbrains.annotations.Nullable;
+
 import org.json.JSONArray;
 
 import java.io.BufferedReader;
@@ -15,7 +15,7 @@ static String[] result = aoth();
     private static final String API_URL = result[0];
     private static final String API_KEY = result[1];
 
-    @Nullable
+
 
     public static JSONArray getResponse(String endpoint) throws Exception {
         URL url = new URL(API_URL + endpoint);
