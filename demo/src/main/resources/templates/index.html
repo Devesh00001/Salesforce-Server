@@ -1,0 +1,41 @@
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page with Background Image Example</title>
+    <link rel="stylesheet" type="text/css" href=".\static\css\styles.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="bg"></div>
+
+<form action="login" method="post">
+    <div class="form-field">
+        <input type="email" id= "email" name = "email" placeholder="Email"  pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+               title="Enter valid Salesforce email "/>
+    </div>
+
+    <div class="form-field">
+        <input type="password" placeholder="Password" required id= "password" name = "password"
+               title="SalesForce (UserPass + Admin Security Token)"/></div>
+
+    <div class="form-field">
+        <label for="clientid"></label>
+        <input type="text" placeholder="ClientId" id="clientid" name="clientid"></div>
+    <div>
+
+    <div class="clientsecret">
+
+        <label for="clientsecret"></label>
+        <input type="text" placeholder="ClientSecret" id="clientsecret" name="clientsecret"></div>
+
+    </div>
+    </div>
+
+    <div class="form-field">
+    <button class="btn" type="submit">Log in</button>
+  </div>
+</form>
+<!-- partial -->
+  
+</body>
+</html>
