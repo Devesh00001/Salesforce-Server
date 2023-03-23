@@ -43,6 +43,7 @@ public class register {
 
             return new ModelAndView("redirect:" + projectUrl);
         } else {
+
             model.addAttribute("code", "ErrorCode: 400");
             model.addAttribute("error", "error_description: authentication failure");
             return new ModelAndView("login");

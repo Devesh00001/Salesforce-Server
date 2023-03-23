@@ -32,7 +32,7 @@ public class  login {
                 conn.getEmail() + "&password=" + conn.getPassword();
         System.out.println(loginurl);
         HttpPost httpPost = new HttpPost(loginurl);
-        ;
+
         try {
             response = httpclient.execute(httpPost);
         } catch (IOException cpException) {
